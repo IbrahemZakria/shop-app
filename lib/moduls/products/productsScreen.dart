@@ -20,14 +20,16 @@ class productsScreen extends StatelessWidget {
         var model = cubit.homemodel?.data!.products;
         var categorymodel = cubit.categoriesmodel?.data!.categorydata;
 
+        double width = MediaQuery.of(context).size.width;
+        double height = MediaQuery.of(context).size.height;
+
         return ConditionalBuilder(
             condition: cubit.images.isEmpty,
             builder: (context) => const Scaffold(),
             fallback: (context) {
               return Scaffold(
                 body: ConditionalBuilder(
-                    condition: cubit.images.isNotEmpty &&
-                        categorymodel != null,
+                    condition: cubit.images.isNotEmpty && categorymodel != null,
                     fallback: (context) => const Center(
                             child: CircularProgressIndicator(
                           color: Colors.amber,
@@ -67,15 +69,13 @@ class productsScreen extends StatelessWidget {
                                                   .size
                                                   .width,
                                               height: 120,
-                                              child: 
-                                              ListView.separated(
+                                              child: ListView.separated(
                                                   shrinkWrap: true,
                                                   physics:
                                                       const BouncingScrollPhysics(),
                                                   itemBuilder:
                                                       (context, index) {
-                                                    return
-                                                     Stack(
+                                                    return Stack(
                                                       alignment:
                                                           AlignmentDirectional
                                                               .bottomStart,
@@ -130,9 +130,10 @@ class productsScreen extends StatelessWidget {
                                       ),
                                       GridView.count(
                                         shrinkWrap: true,
-                                        physics: const NeverScrollableScrollPhysics(),
+                                        physics:
+                                            const NeverScrollableScrollPhysics(),
                                         crossAxisCount: 2,
-                                        childAspectRatio: 1 / 1.6,
+                                        childAspectRatio: 1 / (height * .0022),
                                         mainAxisSpacing: 2,
                                         crossAxisSpacing: 2,
                                         children: List.generate(model!.length,
@@ -151,6 +152,4 @@ class productsScreen extends StatelessWidget {
       },
     );
   }
-
-  
 }

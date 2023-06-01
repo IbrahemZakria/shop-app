@@ -33,6 +33,7 @@ class mainlogin extends StatelessWidget {
                 timeInSecForIosWeb:
                     5, // set timeInSecForIosWeb to a value greater than 0
               );
+              
               cashHelper.putdata(
                   key: 'token', value: state.loginmodel.data!.token);
 

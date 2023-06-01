@@ -24,7 +24,8 @@ class _shopLayoutState extends State<shopLayout> {
       builder: (context, state) {
         var cubit = LoginCubit.get(context);
         var shopcubit = ShopCubit.get(context);
-        return Scaffold(
+        return 
+        Scaffold(
           drawer: Drawer(
               child: Container(
             child: Column(
@@ -141,6 +142,7 @@ class _shopLayoutState extends State<shopLayout> {
           ),
           body: shopcubit.screens[shopcubit.currentIndex],
           floatingActionButton: FloatingActionButton(onPressed: () {
+            
           }),
         );
       },

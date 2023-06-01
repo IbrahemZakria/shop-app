@@ -19,9 +19,13 @@ class cashHelper {
     }
   }
 
-  static bool? getbolean({required String key}) {
+  static bool? getbolean({
+    required String key,
+  }) {
     return sharedPreferences?.getBool(key);
   }
+
+ 
 
   static String? getString({required String key}) {
     return sharedPreferences?.getString(key);

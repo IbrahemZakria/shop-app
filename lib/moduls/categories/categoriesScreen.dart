@@ -26,7 +26,7 @@ class categoriesScreen extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.width * .3,
                     child: Image.network(categorymodel[index].image!,
-                        fit: BoxFit.cover),
+                         width: double.infinity, height: 200),
                   ),
                   const SizedBox(
                     width: 10,
